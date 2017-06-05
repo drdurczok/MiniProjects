@@ -1,11 +1,11 @@
 # Catapult
 ## Project Goals
-The goal of the project was to create a device that could fire small projectiles into three seperate containers.
+The goal of the project was to create a device that could fire small projectiles into three separate containers.
 Mechanical limitations:
 -  Built from lego, including motors and sensors
 -  Must shoot at least two meters
 -  Minimum scanning area of 180 degrees
--  Find up to three seperate targets and gauge the distance and torque required
+-  Find up to three separate targets and gauge the distance and torque required
 -  Before firing, user confirmation is necessary
 
 Software limitations:

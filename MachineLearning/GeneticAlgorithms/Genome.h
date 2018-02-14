@@ -17,6 +17,7 @@ public:
 	void Crossover();
 	void Statistics();
 	void PrintGenome();
+	unsigned GetFF();
 private:
 	void Roulette();
 	void Mutations(unsigned stringNum);

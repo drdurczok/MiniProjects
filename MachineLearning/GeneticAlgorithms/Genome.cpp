@@ -39,7 +39,7 @@ void Genome::FitnessFactor() {	//Based on x^2
 		}
 		Gen_New.BinToDec.push_back(temp1);
 		temp2 = pow(temp1,2); temp1 = 0;
-		Gen_New.fitSum += temp2;
+		Gen_New.fitSum+=temp2;
 		Gen_New.fitFactor.push_back(temp2);
 		Gen_New.fitFactorRelative.push_back(Gen_New.fitSum);
 	}
@@ -138,7 +138,7 @@ void Genome::Mutations(unsigned stringNum) {
 //************************ Statistics **********************************
 void Genome::Statistics() {
 	//Fitness Factor Sum
-	for(unsigned i=0; i<Gen_New.fitFactor.size(); i++) {Gen_New.fitSum += Gen_New.fitFactor[i]; }
+	//for(unsigned i=0; i<Gen_New.fitFactor.size(); i++) {Gen_New.fitSum += Gen_New.fitFactor[i]; }
 
 	//Highest Performance (STORE DATA) and Lowest Performance
 	Gen_New.largestFF = 0;
@@ -232,6 +232,10 @@ std::string Genome::CompareParent(unsigned i, bool op){
 //************************ Utilities ***********************************
 unsigned Genome::Random(unsigned Range){return (rand()%Range); };
 
+unsigned Genome::GetFF(){
+	return Gen_New.fitSum;
+};
+
 
 
 
@@ -251,12 +255,13 @@ int main() {
 	Genome myGenome(population, lenStrings, mutationProbability);
 
 	unsigned i=0;
-	while(i<10){
+	while(i<1300500){
 		myGenome.FitnessFactor();
 		myGenome.Selection(0);
 		myGenome.PrintGenome();
+		i=myGenome.GetFF();
 		myGenome.Crossover();
-		i++;
+		//i++;
 	}
 
 	return 0;

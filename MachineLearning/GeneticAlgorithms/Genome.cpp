@@ -167,18 +167,18 @@ void Genome::PrintGenome() {
 				<< ","   << std::setw(2) << CompareParent(i,1) << ") "
 				<< "|  " << std::left << std::setw(5) << Gen_Old.locusPair[i][2]
 				<< "|  " << std::setw(14) << Gen_New.fitFactor[i]
-				<< "|  " << std::setw(11) << std::setprecision(2) << Gen_New.fitPercent[i]*100
+				<< "|  %" << std::setw(10) << std::setprecision(2) << Gen_New.fitPercent[i]*100
 				<< "|  "
 				<< std::endl;
 	}
 
 	std::cout << "----------------------------------------------------------------------------------------" << std::endl;
 	std::cout << std::left 
-			<< "| Gen " << std:: setw(5) << nGeneration
-			<< "| FF Sum: " << std::setw(10) << Gen_New.fitSum
-			<< "| High FF: " << std::setw(8) << Gen_New.largestFF
-			<< "| Lowe FF: " << std::setw(8) << Gen_New.smallestFF
-			<< "| nMutations: " << std::setw(4) << Gen_New.nMutation
+			<< "| " << "\033[1;31mGEN " << std:: setw(5) << nGeneration << "\033[0m"
+			<< "| FF Sum: \033[1;36m" << std::setw(10) << Gen_New.fitSum << "\033[0m"
+			<< "| High FF: \033[1;36m" << std::setw(8) << Gen_New.largestFF << "\033[0m"
+			<< "| Lowe FF: \033[1;36m" << std::setw(8) << Gen_New.smallestFF << "\033[0m"
+			<< "| nMutations: \033[1;36m" << std::setw(4) << Gen_New.nMutation << "\033[0m"
 			<< "|"
 			<< std::endl;
 	std::cout << "----------------------------------------------------------------------------------------" << std::endl;
@@ -253,9 +253,8 @@ int main() {
 	unsigned lenStrings = 8;
 	double mutationProbability = 0.2; 	//As a percentage 0.2 is 0.2%
 	Genome myGenome(population, lenStrings, mutationProbability);
-
 	unsigned i=0;
-	while(i<1300500){
+	while(i<(pow(pow(2,lenStrings)-1,2)*population)){
 		myGenome.FitnessFactor();
 		myGenome.Selection(0);
 		myGenome.PrintGenome();

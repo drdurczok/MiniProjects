@@ -1,0 +1,6 @@
+To merge into one pdf:
+
+$ sudo apt-get install pdftk
+
+$ pdftk IntroDocumentation.pdf Calculations.pdf PartDocumentation.pdf CADDocumentation.pdf CodeDocumentation.pdf Summary.pdf output 1_Documentation.pdf
+

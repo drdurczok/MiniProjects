@@ -1,0 +1,22 @@
+Circuit: * C:\Users\Damian\Desktop\Opener_V2.0\Spice\HBridge.asc
+
+Instance "m:u1:2": Length shorter than recommended for a level 3 MOSFET.
+Direct Newton iteration for .op point succeeded.
+
+Date: Sun Oct 25 08:01:34 2020
+Total elapsed time: 1.351 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 23431
+traniter = 23391
+tranpoints = 7310
+accept = 5400
+rejected = 1910
+matrix size = 50
+fillins = 22
+solver = Normal
+Matrix Compiler1: 4.82 KB object code size  3.5/2.1/[1.2]
+Matrix Compiler2: off  [1.6]/2.7/1.7
+

@@ -28,11 +28,19 @@ void button_grid_init(){
 
   led_init();
 
-  Serial.write("Button Grid Initialized");
+  //Serial.write("Button Grid Initialized");
+}
+
+void send_midi(int i){
+  Serial.write(B10010000);
+  Serial.write(i);
+  Serial.write(100);
 }
 
 void set_to_on(int col, int row){
   if (state[col][row] == false){
+    int pos = col*NUM_BUTTONS_PER_COL + row;
+    send_midi(pos);
     led_light(col, row);
 
     state[col][row] = true;

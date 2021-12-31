@@ -20,7 +20,7 @@ void led_reset(int col, int row) {
 
 void led_reset_row(int col){
   for (unsigned i = col*NUM_LEDS_COL; i < NUM_LEDS_COL; i++){
-    Serial.println(i);
+    //Serial.println(i);
     leds[i] = CRGB::Black;
   }
   FastLED.show();

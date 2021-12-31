@@ -4,6 +4,8 @@
 #include <Arduino.h>
 #include "led.h"
 
+#define NUM_BUTTONS_PER_COL 4
+
 void button_grid_init();
 void isPressed();
 

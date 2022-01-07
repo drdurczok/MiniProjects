@@ -1037,13 +1037,13 @@ Buttons
 $Comp
 L Transistor_FET:AO3401A Q3
 U 1 1 5FA65F39
-P 7500 1500
-F 0 "Q3" H 7705 1546 50  0000 L CNN
-F 1 "AO3401A" H 7705 1455 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 7700 1425 50  0001 L CIN
-F 3 "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf" H 7500 1500 50  0001 L CNN
-	1    7500 1500
-	1    0    0    -1  
+P 9600 1500
+F 0 "Q3" H 9805 1546 50  0000 L CNN
+F 1 "AO3401A" H 9805 1455 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 9800 1425 50  0001 L CIN
+F 3 "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf" H 9600 1500 50  0001 L CNN
+	1    9600 1500
+	-1   0    0    1   
 $EndComp
 $Comp
 L Device:R R9
@@ -1146,13 +1146,13 @@ $EndComp
 $Comp
 L Transistor_FET:AO3401A Q7
 U 1 1 5FA65F76
-P 9600 1500
-F 0 "Q7" H 9805 1546 50  0000 L CNN
-F 1 "AO3401A" H 9805 1455 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 9800 1425 50  0001 L CIN
-F 3 "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf" H 9600 1500 50  0001 L CNN
-	1    9600 1500
-	-1   0    0    -1  
+P 7500 1500
+F 0 "Q7" H 7705 1546 50  0000 L CNN
+F 1 "AO3401A" H 7705 1455 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 7700 1425 50  0001 L CIN
+F 3 "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf" H 7500 1500 50  0001 L CNN
+	1    7500 1500
+	1    0    0    1   
 $EndComp
 $Comp
 L Device:R R14
@@ -1557,7 +1557,7 @@ F 3 "~" H 10600 3900 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Custom:CD4011BM96 IC1
+L OpenerV1.1_Board-rescue:CD4011BM96-Custom IC1
 U 1 1 5FB34D05
 P 9450 3500
 F 0 "IC1" H 9950 3765 50  0000 C CNN
@@ -1839,10 +1839,10 @@ F 3 "" H 6050 1000 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R_Small R?
+L Device:R_Small R21
 U 1 1 5FD5D12C
 P 2150 6050
-F 0 "R?" H 2209 6096 50  0000 L CNN
+F 0 "R21" H 2209 6096 50  0000 L CNN
 F 1 "4.7k" H 2209 6005 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" H 2150 6050 50  0001 C CNN
 F 3 "~" H 2150 6050 50  0001 C CNN
@@ -1850,10 +1850,10 @@ F 3 "~" H 2150 6050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0137
 U 1 1 5FD6B4BE
 P 2150 5950
-F 0 "#PWR?" H 2150 5700 50  0001 C CNN
+F 0 "#PWR0137" H 2150 5700 50  0001 C CNN
 F 1 "GND" V 2155 5822 50  0000 R CNN
 F 2 "" H 2150 5950 50  0001 C CNN
 F 3 "" H 2150 5950 50  0001 C CNN

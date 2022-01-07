@@ -510,9 +510,9 @@ Wire Wire Line
 	3250 1000 3450 1000
 Text Notes 3200 6700 0    50   ~ 0
 FTDI Header
-Text GLabel 3950 7350 2    50   Input ~ 0
-Tx0
 Text GLabel 3950 7450 2    50   Input ~ 0
+Tx0
+Text GLabel 3950 7350 2    50   Input ~ 0
 Rx0
 $Comp
 L Connector_Generic:Conn_01x06 J8
@@ -1557,7 +1557,7 @@ F 3 "~" H 10600 3900 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Custom:CD4011BM96 IC1
+L OpenerV1.1_Board-rescue:CD4011BM96-Custom IC1
 U 1 1 5FB34D05
 P 9450 3500
 F 0 "IC1" H 9950 3765 50  0000 C CNN
@@ -1673,20 +1673,20 @@ Wire Wire Line
 $Comp
 L Device:R R20
 U 1 1 5FF1CF55
-P 3750 7450
-F 0 "R20" V 3957 7450 50  0000 C CNN
-F 1 "10K" V 3866 7450 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 3680 7450 50  0001 C CNN
-F 3 "~" H 3750 7450 50  0001 C CNN
-	1    3750 7450
+P 3750 7350
+F 0 "R20" V 3957 7350 50  0000 C CNN
+F 1 "10K" V 3866 7350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3680 7350 50  0001 C CNN
+F 3 "~" H 3750 7350 50  0001 C CNN
+	1    3750 7350
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	3600 7450 3550 7450
+	3600 7350 3550 7350
 Wire Wire Line
-	3900 7450 3950 7450
+	3900 7350 3950 7350
 Wire Wire Line
-	3550 7350 3950 7350
+	3550 7450 3950 7450
 Text GLabel 4100 3200 2    50   Input ~ 0
 DTR_FTDI
 Wire Wire Line

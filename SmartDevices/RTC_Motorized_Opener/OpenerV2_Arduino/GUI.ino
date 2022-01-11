@@ -16,6 +16,9 @@ bool updateText = 0;
 uint8_t state_addr = 16;
 
 void gui_startup(){
+  LCD_print_top("Booting...");
+  delay(1000);
+  
   motorOpen_hour = EEPROM.read(0);
   motorOpen_min = EEPROM.read(1);
   motorOpen = EEPROM.read(2);
@@ -28,7 +31,8 @@ void gui_startup(){
 }
 
 void motor_action_open(){
-  if(motorState != 1){
+  //if(motorState != 1){
+  if(motorState != -1){
     motor_open_sec(motorOpenLen);
     motorState = 1;
     writeEEPROM(state_addr, motorState);
@@ -36,7 +40,8 @@ void motor_action_open(){
 }
 
 void motor_action_close(){
-  if(motorState != 0){
+  //if(motorState != 0){
+  if(motorState != -1){
     motor_close_sec(motorCloseLen);
     motorState = 0;
     writeEEPROM(state_addr, motorState);
@@ -82,8 +87,12 @@ void menu_01(){
       date_prev = date;
   }
   
-  if(isPressed()==2)     { motor_action_open(); }
-  else if(isPressed()==3){ motor_action_close();}
+  if(isPressed()==2)     {
+    LCD_print_bottom("OPENING         "); 
+    motor_action_open(); }
+  else if(isPressed()==3){
+    LCD_print_bottom("CLOSING         "); 
+    motor_action_close();}
 }
 
 void menu_toggleTime(uint8_t& motor_min, uint8_t& motor_hour, bool& motorState, String menuText, uint8_t addr){

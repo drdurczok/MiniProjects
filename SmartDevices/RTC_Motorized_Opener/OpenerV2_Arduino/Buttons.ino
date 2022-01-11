@@ -15,12 +15,15 @@ uint8_t isPressed() {
   int val = analogRead(buttons);
   Serial.println(val);
   if(val > -5 && val < 5){
+    buttonState = 3;
     return 3;
   }
   else if(val >=5 && val < 12){
+    buttonState = 1;
     return 1;
   }
   else if(val >=12 && val < 22){
+    buttonState = 2;
     return 2;
   }
   else{

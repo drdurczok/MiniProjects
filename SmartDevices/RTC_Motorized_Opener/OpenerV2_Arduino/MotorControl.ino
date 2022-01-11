@@ -18,17 +18,17 @@ void motor_start(){
 
 void motor_open(){
   motor_stop();
-  delay(10);
+  delay(100);
   analogWrite(dir, 0);
-  delay(10);
+  delay(100);
   motor_start();
 }
 
 void motor_close(){
   motor_stop();
-  delay(10);
+  delay(100);
   analogWrite(dir, 255);
-  delay(10);
+  delay(100);
   motor_start();
 }
 

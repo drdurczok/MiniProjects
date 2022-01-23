@@ -1,8 +1,9 @@
 const int buttons = 15;     // (A2) the number of the pushbutton pin
 
 // variables will change:
-int buttonState = 0;         // variable for reading the pushbutton status
-int prev_buttonState = 0;
+uint8_t button_buffer = 0;         // variable for reading the pushbutton status
+double timestamp = 0;
+
 
 void button_setup() {
   // initialize the pushbutton pin as an input:
@@ -11,29 +12,33 @@ void button_setup() {
   Serial.println("INIT");
 }
 
-uint8_t isPressed() {
-  // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
-  int val = analogRead(buttons);
+void button_scan() {
+  uint8_t button_temp = button_check();
 
-  if     (val > -5 && val < 5) { buttonState = 2;  }    // Top button
-  else if(val >=5 && val < 12) { buttonState = 1;  }    // Middle button
-  else if(val >=12 && val < 22){ buttonState = 3;  }    // Bottom button
+  // If a button was pressed and it is not an already handled press, handle the press
+  if (button_temp && button_temp != button_buffer){
+    double timestamp_temp = millis();
+
+    if ((timestamp_temp - timestamp) > 300){
+      button_buffer = button_temp;
+      timestamp = timestamp_temp;      
+    }
+  }
+}
+
+bool isPressed(uint8_t ask) {
+  if (button_buffer == ask) {
+    button_buffer = 0;
+    return true;
+  }
+  return false;
+}
+
+uint8_t button_check() {
+  uint8_t val = analogRead(buttons);
+
+  if     (val > -5 && val < 5) { return 2;  }    // Top button
+  else if(val >=5 && val < 16) { return 1;  }    // Middle button
+  else if(val >=16 && val < 22){ return 3;  }    // Bottom button
   else{ return 0; }
-
-
-
-  if (prev_buttonState == buttonState){
-    Serial.println("__________");
-    Serial.println("Current  Button: " + String(buttonState));
-    Serial.println("Previous Button: " + String(prev_buttonState));
-    Serial.println("__________");
-    return 0;
-  }
-  else {
-    prev_buttonState = buttonState;
-    buttonState = 0;
-    Serial.println("Current  Button: " + String(buttonState));
-    Serial.println("Previous Button: " + String(prev_buttonState));
-    return prev_buttonState;
-  }
 }

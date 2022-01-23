@@ -56,15 +56,15 @@ void sleep(){
     }
   }
 
+  button_scan();
   //If any button is pressed enter awake state
-  if(isPressed()){
-    delay(90);
-    if(isPressed()){
-      //Get current minute which is used for screen timeout
-      buttonPressMin = RTC_getMin();
-      CPUState = Awake;
-    }
+  if(isPressed(1) || isPressed(2) || isPressed(3)){
+    //Get current minute which is used for screen timeout
+    buttonPressMin = RTC_getMin();
+    CPUState = Awake;
   }
+
+  delay(1000);
 }
 
 //______________________________________________________
@@ -77,6 +77,7 @@ void awake_init(){
 }
 
 void awake(){
+  button_scan();
   menu_select();
 }
 

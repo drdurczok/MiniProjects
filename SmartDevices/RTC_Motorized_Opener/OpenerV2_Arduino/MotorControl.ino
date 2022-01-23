@@ -1,6 +1,26 @@
 #define en 3
 #define dir 2
 
+//_____________________________________________
+void motor_action_open(){
+  if(motorState != 1){
+    LCD_print_bottom("OPENING         "); 
+    motor_open_sec(motorOpenLen);
+    motorState = 1;
+    writeEEPROM(state_addr, motorState);
+  }
+}
+
+void motor_action_close(){
+  if(motorState != 0){
+    LCD_print_bottom("CLOSING         "); 
+    motor_close_sec(motorCloseLen);
+    motorState = 0;
+    writeEEPROM(state_addr, motorState);
+  }
+}
+
+//_____________________________________________
 void motor_startup(){
   pinMode(en, OUTPUT);
   motor_stop();

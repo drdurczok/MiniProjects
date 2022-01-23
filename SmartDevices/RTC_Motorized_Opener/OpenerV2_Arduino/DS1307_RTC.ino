@@ -70,6 +70,12 @@ uint8_t RTC_getMin(){
   return now.Minute();
 }
 
+uint8_t RTC_getSec(){
+  RtcDateTime now = Rtc.GetDateTime();
+          
+  return now.Second();
+}
+
 String RTC_getDate(){
   RtcDateTime now = Rtc.GetDateTime();
 

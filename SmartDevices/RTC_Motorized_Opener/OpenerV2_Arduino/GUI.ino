@@ -1,4 +1,4 @@
-#define MENU_MAX 6;
+#define MENU_MAX 5;
 uint8_t menu_id = 0;
 uint8_t menu_id_prev = 1;
 String date, date_prev;
@@ -52,7 +52,7 @@ void menu(){
     case 2: menu_toggleTime(motorClose_min, motorClose_hour, motorClose, "Set Closing Time", 4); break;
     case 3: menu_toggleLen(motorOpenLen, "Set Opening Len", 8); break;
     case 4: menu_toggleLen(motorCloseLen, "Set Closing Len", 12); break;
-    case 5: menu_calibration( "     Manual", 16); break;
+    //case 5: menu_calibration( "     Manual", 16); break;
   }
   menu_id_prev = menu_id;
 }

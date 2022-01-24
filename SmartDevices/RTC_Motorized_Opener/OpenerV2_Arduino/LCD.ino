@@ -41,6 +41,7 @@ void LCD_BacklightOn() {
 
 void LCD_BacklightOff() {
   digitalWrite(LCD_BACKLIGHT, LOW);
+  delay(100);
 }
 
 void LCD_print(String text) {

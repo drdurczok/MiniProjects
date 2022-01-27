@@ -661,17 +661,6 @@ F 3 "~" H 2400 6050 50  0001 C CNN
 	1    2400 6050
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:Q_NPN_BCE Q1
-U 1 1 5EAD49E6
-P 2400 6350
-F 0 "Q1" H 2591 6396 50  0000 L CNN
-F 1 "NPN" H 2591 6305 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92" H 2600 6450 50  0001 C CNN
-F 3 "~" H 2400 6350 50  0001 C CNN
-	1    2400 6350
-	0    1    1    0   
-$EndComp
 Text GLabel 3050 3750 2    50   Input ~ 0
 D5
 Wire Wire Line
@@ -1862,4 +1851,15 @@ F 3 "" H 2150 5950 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2150 6150 2050 6150
+$Comp
+L Transistor_BJT:2N3904 Q1
+U 1 1 61F3A9A1
+P 2400 6350
+F 0 "Q1" H 2590 6396 50  0000 L CNN
+F 1 "2N3904" H 2590 6305 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 2600 6275 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 2400 6350 50  0001 L CNN
+	1    2400 6350
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC
